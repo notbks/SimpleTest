@@ -27,7 +27,49 @@ public class DefaultValue {
 		int b;
 		//b是局部变量，在声明时必须 初始化
 		//System.out.println(b);
+		/////////////////////////////////////////////////////////////////////////////////
+		String d ="d";
+		System.out.println(d);
+		strToNULL(d);
+		System.out.println(d);
 		
+		Person p =new Person();
+		p.setAge(11);
+		p.setName("p1");
+		Person p2 =new Person();
+		p2.setAge(22);
+		p2.setName("p2");
+		
+		objToNULL(p,p2);
+		System.out.println(p.name);
 	}
+	
+	public static void strToNULL(String str) {
+		if(str =="") {
+			str =null;
+		}else {
+			str="bianle";
+		}
+	}
+	public static void objToNULL(Person p, Person p2) {
+		p=p2;
+	}
+}
 
+class Person{
+	String name;
+	int age;
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public int getAge() {
+		return age;
+	}
+	public void setAge(int age) {
+		this.age = age;
+	}
+	
 }
